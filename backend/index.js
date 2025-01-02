@@ -9,13 +9,13 @@ const app = express();
 app.use(express.json());
 app.use(cors('*'));
 //middleware for handling cors errors
-app.use(
-  cors({
-    origin: 'http://localhost:8080',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type'],
-  })
-);
+// app.use(
+//   cors({
+//     origin: 'http://localhost:8080',
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     allowedHeaders: ['Content-Type'],
+//   })
+// );
 
 //routes
 
@@ -27,7 +27,7 @@ app.use('/books', booksRoute);
 
 mongoose
   .connect(
-    'mongodb+srv://ahmed:*****@cluster0.7xtrv.mongodb.net/books-collection?retryWrites=true&w=majority&appName=Cluster0'
+    'mongodb+srv://ahmed:ahmed1234@cluster0.7xtrv.mongodb.net/books-collection?retryWrites=true&w=majority&appName=Cluster0'
   )
   .then(() => {
     console.log('Connected to MongoDB');
